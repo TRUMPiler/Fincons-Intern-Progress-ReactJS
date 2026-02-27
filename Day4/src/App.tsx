@@ -1,33 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { BrowserRouter,Routes,Route } from 'react-router';
 import './App.css'
-
+import {Home} from './pages/Home';
+import { Products } from './pages/Products';
+import { ProductDetails } from './pages/ProductDetails';
+import Navbar from './components/Navbar';
+import { CartContext,type CartItem } from './components/Cart';
+import { useState } from 'react';
+import { Sidebars } from './components/SideBars';
 function App() {
-  const [count, setCount] = useState(0)
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+  {/* 3.webp:1 
+ GET https://cdn.dummyjson.com/product-images/fragrances/calvin-klein-ck-one/1.w…s://cdn.dummyjson.com/product-images/fragrances/calvin-klein-ck-one/3.webp 404 (Not Found)
+<img>	 */}
+    <BrowserRouter>
+    
+    <CartContext.Provider value={[cartItems, setCartItems]}>
+        
+     <Navbar/>
+      <Routes>
+        <Route path='/' element={<Home/>} />
+        <Route path='/shop' element={<Products/>}/>
+        <Route path='/products/:id' element={<ProductDetails/>}/>
+      </Routes>
+    </CartContext.Provider>
+    </BrowserRouter>
+    
     </>
   )
 }
