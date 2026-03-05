@@ -78,6 +78,3 @@ If you want a compact list you can copy from `package.json`'s `dependencies` and
 ## Notes
 
 - Data in this example is kept locally (models in `src/models`) and seeded at runtime for demo purposes.
-- This README is intentionally concise — let me know if you want expanded docs (component map, data model details, or deployment steps to Vercel).
-
----
