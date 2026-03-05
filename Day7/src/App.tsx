@@ -23,7 +23,7 @@ function App() {
           const user=addUser({id:0,name:"naisal",email:"naisal036@gmail.com",password:"naisal036@gmail.com",role:"admin"});
           addUser({id:0,name:"Riya",email:"riya.jain@finconsgroup.com",password:"riyaISGreat@123",role:"admin"}); //id is zero because add user will assign the id, no need to worry
           addUser({id:0,name:"naishal",email:"naishal036@gmail.com",password:"naishalK$447@",role:"user"});
-          createTeam("Youtiverse",1,[1,3]);
+          createTeam("Youtiverse",1,[3]);
           console.log(user);
       },[])
       
