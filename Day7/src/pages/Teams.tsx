@@ -173,22 +173,18 @@ export function TeamsPage() {
   return (
     <div className="dark:bg-black min-h-screen py-8 dark:bg-none bg-linear-to-r from-blue-300 to-blue-700 w-full">
       <Toast ref={toast} />
-
       <div className="container mx-auto px-4">
         <h1 className="text-3xl font-bold mb-6 text-center dark:text-white text-gray-800">
           Team Management
         </h1>
-
         <div className="mb-6 flex justify-end ">
           <button
             onClick={openCreateDialog}
-            className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg dark:border dark:border-white font-semibold transition-all"
-          >
+            className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg dark:border dark:border-white font-semibold transition-all">
             Create Team
           </button>
         </div>
 
-        {/* Teams Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-6">
           {teams ? (
             teams.map((team) => (
@@ -242,7 +238,6 @@ export function TeamsPage() {
         </div>
       </div>
 
-      {/* Create Team Dialog */}
       <Dialog
         visible={createVisible}
         header="Create Team"
